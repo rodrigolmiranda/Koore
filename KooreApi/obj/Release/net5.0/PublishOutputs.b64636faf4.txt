@@ -1,0 +1,13 @@
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.exe
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.deps.json
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.runtimeconfig.json
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.pdb
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\Npgsql.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
