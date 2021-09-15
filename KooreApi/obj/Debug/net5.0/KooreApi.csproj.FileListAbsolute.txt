@@ -29,3 +29,10 @@ C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Debug\net5.0\KooreApi.genrunti
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\Npgsql.dll
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Debug\net5.0\KooreApi.csproj.AssemblyReference.cache
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\Reports\ReportTemplate.txt
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\ServiceStack.Text.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\TikTokAdsAPI.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\RestSharp.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\TikTokAdsAPI.pdb
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\TikTokAdsAPI.dll.config
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\RestSharp.xml

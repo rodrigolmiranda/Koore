@@ -78,5 +78,25 @@ namespace KooreApi.Business
                 throw ex;
             }
         }
+        public int BulkInsertAudienceReport(string strCon, string _report)
+        {
+            try
+            {
+                using var con = new NpgsqlConnection(strCon);
+                con.Open();
+
+                //var sql = $"copy reports_async FROM '{_report}' DELIMITER ',' CSV HEADER";
+                var sql = $"call import_audience_reports (@_report)";
+                using var cmd = new NpgsqlCommand(sql, con);
+                cmd.Parameters.AddWithValue("@_report", _report);
+
+                int qtdRet = cmd.ExecuteNonQuery();
+                return qtdRet;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
