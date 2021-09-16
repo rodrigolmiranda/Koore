@@ -6,24 +6,27 @@ namespace KooreApi
     {
         public Int64 id { get; set; }
         public Int64 campaign_id { get; set; }
-        public DateTime stat_datetime { get; set; }
-        public string ac { get; set; }
+        public DateTime stat_time_day { get; set; }
         public string age { get; set; }
-        public string country_id { get; set; }
-        public string interest_category { get; set; }
-        public string interest_category_v2 { get; set; }
         public string gender { get; set; }
-        public string language { get; set; }
-        public string placement_id { get; set; }
-        public string platform { get; set; }
-        public double click_cnt { get; set; }
-        public double conversion_cost { get; set; }
-        public double conversion_rate { get; set; }
-        public double convert_cnt { get; set; }
+        public double spend { get; set; }
+        public double cpc { get; set; }
+        public double cpm { get; set; }
+        public double impressions { get; set; }
+        public double clicks { get; set; }
         public double ctr { get; set; }
-        public double show_cnt { get; set; }
-        public double stat_cost { get; set; }
-        public double time_attr_convert_cnt { get; set; }
+        public double conversion { get; set; }
+        public double cost_per_conversion { get; set; }
+        public double conversion_rate { get; set; }
+        public double real_time_conversion { get; set; }
+        public double real_time_cost_per_conversion { get; set; }
+        public double real_time_conversion_rate { get; set; }
+        public double result { get; set; }
+        public double cost_per_result { get; set; }
+        public double result_rate { get; set; }
+        public double real_time_result { get; set; }
+        public double real_time_cost_per_result { get; set; }
+        public double real_time_result_rate { get; set; }
         public DateTime created_at { get; set; }
 
     }
@@ -32,25 +35,47 @@ namespace KooreApi
         public string stat_month_year { get; set; }
         public string stat_month { get; set; }
         public string stat_year { get; set; }
-        public double click_cnt { get; set; }
-        public double conversion_cost { get; set; }
-        public double conversion_rate { get; set; }
-        public double convert_cnt { get; set; }
+        public double spend { get; set; }
+        public double cpc { get; set; }
+        public double cpm { get; set; }
+        public double impressions { get; set; }
+        public double clicks { get; set; }
         public double ctr { get; set; }
-        public double show_cnt { get; set; }
-        public double stat_cost { get; set; }
-        public double time_attr_convert_cnt { get; set; }
+        public double conversion { get; set; }
+        public double cost_per_conversion { get; set; }
+        public double conversion_rate { get; set; }
+        public double real_time_conversion { get; set; }
+        public double real_time_cost_per_conversion { get; set; }
+        public double real_time_conversion_rate { get; set; }
+        public double result { get; set; }
+        public double cost_per_result { get; set; }
+        public double result_rate { get; set; }
+        public double real_time_result { get; set; }
+        public double real_time_cost_per_result { get; set; }
+        public double real_time_result_rate { get; set; }
+
     }
     public class audience_report_age
     {
         public string age { get; set; }
-        public double click_cnt { get; set; }
-        public double conversion_cost { get; set; }
-        public double conversion_rate { get; set; }
-        public double convert_cnt { get; set; }
+        public double spend { get; set; }
+        public double cpc { get; set; }
+        public double cpm { get; set; }
+        public double impressions { get; set; }
+        public double clicks { get; set; }
         public double ctr { get; set; }
-        public double show_cnt { get; set; }
-        public double stat_cost { get; set; }
-        public double time_attr_convert_cnt { get; set; }
+        public double conversion { get; set; }
+        public double cost_per_conversion { get; set; }
+        public double conversion_rate { get; set; }
+        public double real_time_conversion { get; set; }
+        public double real_time_cost_per_conversion { get; set; }
+        public double real_time_conversion_rate { get; set; }
+        public double result { get; set; }
+        public double cost_per_result { get; set; }
+        public double result_rate { get; set; }
+        public double real_time_result { get; set; }
+        public double real_time_cost_per_result { get; set; }
+        public double real_time_result_rate { get; set; }
+
     }
 }

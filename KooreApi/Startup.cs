@@ -11,6 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using Hangfire.PostgreSql;
+using Hangfire;
+
 
 namespace KooreApi
 {
@@ -26,6 +30,13 @@ namespace KooreApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddEntityFrameworkNpgsql().AddDbContext<DefaultDbContext>(options =>
+            {
+                options.UseNpgsql(Configuration.GetConnectionString("HangfireDB"));
+            });
+            services.AddHangfire(x => x.UsePostgreSqlStorage(Configuration.GetConnectionString("HangfireDB")));
+            
+
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
@@ -63,6 +74,17 @@ namespace KooreApi
             {
                 endpoints.MapControllers();
             });
+
+            app.UseHangfireDashboard();
+            app.UseHangfireServer();
+
+            //JOBS
+            //TikTok Ads
+            Services.TikTokAds _ads = new Services.TikTokAds(null, Configuration);
+            RecurringJob.AddOrUpdate("Koore.AudienceReport", () => _ads.GetSyncAudienceReport(), Cron.Daily);
+
+            RecurringJob.RemoveIfExists("teste");
+
         }
     }
 }

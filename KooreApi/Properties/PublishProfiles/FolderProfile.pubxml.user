@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\publish\</_PublishTargetUrl>
-    <History>True|2021-09-07T07:24:52.4697921Z;True|2021-09-07T15:22:24.3448122+08:00;True|2021-09-07T13:52:00.3188931+08:00;True|2021-09-07T09:16:26.9774740+08:00;True|2021-09-07T07:57:13.7803929+08:00;True|2021-09-07T07:36:45.0166417+08:00;</History>
+    <History>True|2021-09-16T02:28:57.2467151Z;True|2021-09-07T15:24:52.4697921+08:00;True|2021-09-07T15:22:24.3448122+08:00;True|2021-09-07T13:52:00.3188931+08:00;True|2021-09-07T09:16:26.9774740+08:00;True|2021-09-07T07:57:13.7803929+08:00;True|2021-09-07T07:36:45.0166417+08:00;</History>
   </PropertyGroup>
 </Project>
