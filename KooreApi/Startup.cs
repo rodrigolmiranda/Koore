@@ -81,7 +81,8 @@ namespace KooreApi
             //JOBS
             //TikTok Ads
             Services.TikTokAds _ads = new Services.TikTokAds(null, Configuration);
-            RecurringJob.AddOrUpdate("Koore.AudienceReport", () => _ads.GetSyncAudienceReport(), Cron.Daily);
+            RecurringJob.AddOrUpdate("Koore.AudienceReport", () => _ads.GetSyncAudienceReport(), Cron.Daily(9));
+            RecurringJob.AddOrUpdate("Koore.Campaigns", () => _ads.GetAdvertisers(), Cron.Daily(8));
 
             RecurringJob.RemoveIfExists("teste");
 

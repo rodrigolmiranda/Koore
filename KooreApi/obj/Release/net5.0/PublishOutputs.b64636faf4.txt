@@ -1,6 +1,7 @@
 C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.exe
 C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
 C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\json.json
 C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\Reports\ReportTemplate.txt
 C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.dll
 C:\Users\guigo\source\repos\KooreApi\KooreApi\obj\Release\net5.0\PubTmp\Out\KooreApi.deps.json

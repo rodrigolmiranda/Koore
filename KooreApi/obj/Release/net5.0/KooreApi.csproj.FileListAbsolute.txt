@@ -58,3 +58,4 @@ C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Release\net5.0\RestSharp.dll
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Release\net5.0\TikTokAdsAPI.pdb
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Release\net5.0\TikTokAdsAPI.dll.config
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Release\net5.0\RestSharp.xml
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Release\net5.0\json.json

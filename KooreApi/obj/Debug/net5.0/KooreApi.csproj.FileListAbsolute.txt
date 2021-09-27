@@ -58,3 +58,4 @@ C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\pt-PT\Hangfire.Co
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\pt\Hangfire.Core.resources.dll
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\zh-TW\Hangfire.Core.resources.dll
 C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\zh\Hangfire.Core.resources.dll
+C:\Users\guigo\source\repos\KooreApi\KooreApi\bin\Debug\net5.0\json.json
