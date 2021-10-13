@@ -14,7 +14,9 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Hangfire.PostgreSql;
 using Hangfire;
-
+using KooreApi.Authorization;
+using KooreApi.Model;
+using KooreApi.Business;
 
 namespace KooreApi
 {
@@ -36,7 +38,6 @@ namespace KooreApi
             });
             services.AddHangfire(x => x.UsePostgreSqlStorage(Configuration.GetConnectionString("HangfireDB")));
             
-
             services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
             {
                 builder.AllowAnyOrigin()
@@ -49,6 +50,16 @@ namespace KooreApi
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "KooreApi", Version = "v1" });
             });
+
+
+            // configure strongly typed settings object
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+
+            // configure DI for application services
+            services.AddScoped<IJwtUtils, JwtUtils>();
+            services.AddScoped<IAuth, Auth>();
+            services.AddScoped<UserSession, UserSession>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -68,7 +79,13 @@ namespace KooreApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
+
+            // global error handler
+            app.UseMiddleware<ErrorHandlerMiddleware>();
+
+            // custom jwt auth middleware
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseEndpoints(endpoints =>
             {
@@ -84,7 +101,7 @@ namespace KooreApi
             RecurringJob.AddOrUpdate("Koore.AudienceReport", () => _ads.GetSyncAudienceReport(), Cron.Daily(9));
             RecurringJob.AddOrUpdate("Koore.Campaigns", () => _ads.GetAdvertisers(), Cron.Daily(8));
 
-            RecurringJob.RemoveIfExists("teste");
+            //RecurringJob.RemoveIfExists("teste");
 
         }
     }

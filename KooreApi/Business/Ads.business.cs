@@ -7,15 +7,16 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Npgsql;
+using KooreApi.Model;
 
 namespace KooreApi.Business
 {
-    public class DB
+    public class Ads
     {
-        private readonly ILogger<DB> _logger;
+        private readonly ILogger<Ads> _logger;
         private readonly IConfiguration _config;
 
-        public DB(ILogger<DB> logger, IConfiguration configuration)
+        public Ads(ILogger<Ads> logger, IConfiguration configuration)
         {
             _logger = logger;
             _config = configuration;
@@ -67,7 +68,7 @@ namespace KooreApi.Business
             }
         }
    
-        public int BulkInsertAudienceReport(string _report)
+        public int BulkInsertAudienceReport(string _metric, string _dimension)
         {
             try
             {
@@ -75,14 +76,15 @@ namespace KooreApi.Business
                                 con.Open();
 
                 //var sql = $"copy reports_async FROM '{_report}' DELIMITER ',' CSV HEADER";
-                var sql = $"call import_audience_reports (@_report, @newLines)";
+                var sql = $"call import_audience_reports (@metric, @dimension, @newLines)";
                 using var cmd = new NpgsqlCommand(sql, con);
-                cmd.Parameters.AddWithValue("_report", _report);
                 cmd.Parameters.Add(new NpgsqlParameter("newLines", DbType.Int32) { Direction = ParameterDirection.InputOutput });
-                cmd.Parameters[1].Value = 0;
+                cmd.Parameters.AddWithValue("metric", NpgsqlTypes.NpgsqlDbType.Json, _metric);
+                cmd.Parameters.AddWithValue("dimension", NpgsqlTypes.NpgsqlDbType.Json, _dimension);
+                cmd.Parameters[0].Value = 0;
 
                 int qtdRet = cmd.ExecuteNonQuery();
-                return int.Parse(cmd.Parameters[1].Value.ToString());
+                return int.Parse(cmd.Parameters[0].Value.ToString());
             }
             catch (Exception ex)
             {

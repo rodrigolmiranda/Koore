@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace KooreApi
+namespace KooreApi.Model
 {
     public class Campaigns
     {

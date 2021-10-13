@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+  redis_db:
+    image: redis
+    restart: always
+    container_name: redis_dtl
+    environment: 
+      - ALLOW_EMPTY_PASSWORD=yes

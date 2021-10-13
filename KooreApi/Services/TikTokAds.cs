@@ -36,7 +36,7 @@ namespace KooreApi.Services
 
                 _adv.Configuration.BasePath = "https://business-api.tiktok.com/open_api/";
                 var _ret = _adv.GetAdvertiser(accessToken: accessToken, appId: appId, secret: secret);
-                DB _db = new DB(null, _config);
+                Ads _db = new Ads(null, _config);
                 int retTotInc = 0;
 
                 foreach (var _a in _ret.Data._List)
@@ -60,7 +60,7 @@ namespace KooreApi.Services
 
                 _camp.Configuration.BasePath = "https://business-api.tiktok.com/open_api/";
                 var _ret = _camp.GetCampaign(accessToken: accessToken, advertiserId: _advertiserID);
-                DB _db = new DB(null, _config);
+                Ads _db = new Ads(null, _config);
                 int retTotInc = 0;
 
                 foreach (var _a in _ret.Data._List)
@@ -80,7 +80,7 @@ namespace KooreApi.Services
         {
             try
             {
-                DB _db = new DB(null, _config);
+                Ads _db = new Ads(null, _config);
 
 
                 var _campaigns = _db.GetUserCampaigns(null);
@@ -117,19 +117,35 @@ namespace KooreApi.Services
 
                     } while (_ret.Data.PageInfo.Page < _ret.Data.PageInfo.TotalPage);
                 }
-                string _metricsCsv = CsvSerializer.SerializeToCsv(_report.Select(x => x.Metrics));
-                string _dimensionsCsv = CsvSerializer.SerializeToCsv(_report.Select(x => x.Dimensions));
+                var b = JsonConvert.SerializeObject(_report.Select(x => new { x.Metrics, x.Dimensions }));
+                var metrics = _report.Select(x => x.Metrics).ToList().ToList();
+                var dimensions = _report.Select(x => x.Dimensions).ToList().ToList();
+                //var newList = ls.Zip(li, (a, c) => new { a, c }).ToList();
+                //var newList2 = ls.Intersect(li).ToList();
+                var metricsjson = JsonConvert.SerializeObject(metrics);
+                var dimensionsjson = JsonConvert.SerializeObject(dimensions);
+                //var cc = JsonConvert.SerializeObject(_report.Select(x => x.Dimensions));
+                //var dd = aa.Concat(cc);
 
-                var output = string.Join(System.Environment.NewLine, _dimensionsCsv.Split("\r\n", StringSplitOptions.RemoveEmptyEntries)
-                       .Zip(_metricsCsv.Split("\r\n", StringSplitOptions.RemoveEmptyEntries), (a, b) => string.Join(",", a, b)));//.Replace("\r\n", "\n\n").Replace("\r", "xxxxxxxxxxx").Replace("\n\n", "\r\n");
+                //var aaa = _report.Select(x => x.Metrics);
+                //var ccc = _report.Select(x => x.Dimensions);
+                //var ddd = aaa.Union(ccc);
+
+                //string _metricsCsv = CsvSerializer.SerializeToCsv(_report.Select(x => x.Metrics));
+                ////var a = JsonConvert.SerializeObject(_report.Select(x => (x.Metrics, x.Dimensions)));
+                //string _dimensionsCsv = CsvSerializer.SerializeToCsv(_report.Select(x => x.Dimensions));
+                
+
+                //var output = string.Join(System.Environment.NewLine, _dimensionsCsv.Split("\r\n", StringSplitOptions.RemoveEmptyEntries)
+                //       .Zip(_metricsCsv.Split("\r\n", StringSplitOptions.RemoveEmptyEntries), (a, b) => string.Join(",", a, b)));//.Replace("\r\n", "\n\n").Replace("\r", "xxxxxxxxxxx").Replace("\n\n", "\r\n");
 
 
-                string filename = Path.GetFullPath($"Reports//{Guid.NewGuid()}.csv");
-                System.IO.File.WriteAllText(filename, output);
+                //string filename = Path.GetFullPath($"Reports//{Guid.NewGuid()}.csv");
+                //System.IO.File.WriteAllText(filename, output);
 
 
-                int retBulk = _db.BulkInsertAudienceReport(filename);
-                System.IO.File.Delete(filename);
+                int retBulk = _db.BulkInsertAudienceReport(metricsjson, dimensionsjson);
+                //System.IO.File.Delete(filename);
                 return $"{retBulk} rows included";
             }
             catch (Exception ex)
